@@ -228,8 +228,7 @@
         document.getElementById('summary-nights').innerText = diffDays + " nights";
         document.getElementById('summary-total').innerText = `$${total}`;
         summaryBox.style.display = 'block';
-      }
-    }
+       }
 
     function sendWhatsApp(type) {
       const name = document.getElementById('modal-title').innerText;
@@ -249,6 +248,23 @@
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => card.classList.toggle('hidden', !card.innerText.toLowerCase().includes(filter)));
     }
+    function requestCardPayment() {
+    const propName = document.getElementById('modal-title').innerText;
+    const total = document.getElementById('summary-total').innerText;
+    
+    if(total === "$0") {
+        alert("Please select your dates first so we can calculate the total.");
+        showBookingOptions();
+        return;
+    }
+
+    // This tells the user you're sending them a link
+    alert("To keep your transaction secure, we will send a customized PayPal/Card link to your WhatsApp now.");
+    
+    const msg = `Hi Islandwide! I'd like to pay for my stay at ${propName} (${total}) via Credit Card. Please send the secure payment link.`;
+    window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`);
+}
+
   </script>
 </body>
 </html>
