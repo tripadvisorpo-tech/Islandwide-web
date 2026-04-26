@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Islandwide Stays | Premium Kingston Rentals</title>
+  <title>Islandwide Stays | Premium Jamaica Rentals</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -78,13 +78,13 @@
   <div class="search-card">
     <div class="field">
       <label>Location</label>
-      <input type="text" id="location-input" onkeyup="searchProperties()" placeholder="Where to? (e.g. Waterloo)">
+      <input type="text" id="location-input" onkeyup="searchProperties()" placeholder="Where to? (e.g. Montego Bay)">
     </div>
     <button class="search-btn" onclick="searchProperties()">Check Availability</button>
   </div>
 
   <div class="container" id="property-list">
-    <div class="section-title">Newest Listings 🏠</div>
+    <div class="section-title">Islandwide Featured Stays 🏠</div>
 
     <div class="card">
         <img src="images/genesis1.jpg" class="card-img">
@@ -93,10 +93,11 @@
             <p style="color:#64748b; margin:5px 0;">📍 Sophisticated Urban Bliss, KGN 10</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$150 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
-                <button class="book-btn" onclick="openDetails('Genesis 28 Waterloo Ave', 'Waterloo Ave, Kingston 10', '$150', ['images/genesis1.jpg', 'images/genesis2.jpg', 'images/genesis3.jpg', 'images/genesis4.jpg', 'images/genesis5.jpg', 'images/genesis6.jpg', 'images/genesis7.jpg', 'images/genesis8.jpg', 'images/genesis9.jpg', 'images/genesis10.jpg', 'images/genesis11.jpg', 'images/genesis12.jpg', 'images/genesis13.jpg', 'images/genesis14.jpg', 'images/genesis15.jpg'])">Details</button>
+                <button class="book-btn" onclick="openGallery('Genesis 28', 'images/genesis', 31, '$150', 'Waterloo Ave, KGN 10')">Details</button>
             </div>
         </div>
     </div>
+
     <div class="card">
         <img src="images/sky1.jpg" class="card-img">
         <div class="card-content">
@@ -108,8 +109,21 @@
             </div>
         </div>
     </div>
+
     <div class="card">
-        <img src="images/apt1.jpeg" class="card-img">
+        <img src="images/zen1.jpg" class="card-img">
+        <div class="card-content">
+            <h3 style="margin:0;">Zen Haven @ The Lofts</h3>
+            <p style="color:#64748b; margin:5px 0;">📍 Arthur Wint Dr, Kingston</p>
+            <div class="price-row">
+                <div style="font-weight: 600; font-size:18px;">$125 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
+                <button class="book-btn" onclick="openGallery('Zen Haven', 'images/zen', 16, '$125', 'Arthur Wint Dr, Kingston')">Details</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="images/apt1.jpg" class="card-img">
         <div class="card-content">
             <h3 style="margin:0;">Modern Apartment MoBay</h3>
             <p style="color:#64748b; margin:5px 0;">📍 Spacious Living, St. James</p>
@@ -121,7 +135,7 @@
     </div>
 
     <div class="card">
-        <img src="images/modern1.jpeg" class="card-img">
+        <img src="images/modern1.jpg" class="card-img">
         <div class="card-content">
             <h3 style="margin:0;">Modern Studio MoBay</h3>
             <p style="color:#64748b; margin:5px 0;">📍 Sleek Minimalist, St. James</p>
@@ -133,7 +147,7 @@
     </div>
 
     <div class="card">
-        <img src="images/mahogany1.jpeg" class="card-img">
+        <img src="images/mahogany1.jpg" class="card-img">
         <div class="card-content">
             <h3 style="margin:0;">Mahogany at Carib</h3>
             <p style="color:#64748b; margin:5px 0;">📍 Oceanfront Living, Ocho Rios</p>
@@ -145,7 +159,7 @@
     </div>
 
     <div class="card">
-        <img src="images/mystic1.jpeg" class="card-img">
+        <img src="images/mystic1.jpg" class="card-img">
         <div class="card-content">
             <h3 style="margin:0;">Mystic Ridge Studio</h3>
             <p style="color:#64748b; margin:5px 0;">📍 Resort Style, Ocho Rios</p>
@@ -169,38 +183,13 @@
     </div>
 
     <div class="card">
-        <img src="images/summit1.jpeg" class="card-img">
+        <img src="images/summit1.jpg" class="card-img">
         <div class="card-content">
             <h3 style="margin:0;">Summit 165</h3>
             <p style="color:#64748b; margin:5px 0;">📍 Coastal Views, MoBay</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$210 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
                 <button class="book-btn" onclick="openGallery('Summit 165', 'images/summit', 11, '$210', 'Montego Bay, St. James')">Details</button>
-            </div>
-        </div>
-    </div>
-  </div>
-
-    <div class="card">
-        <img src="images/zen1.jpeg" class="card-img">
-        <div class="card-content">
-            <h3 style="margin:0;">Zen Haven @ The Lofts</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Arthur Wint Dr, Kingston</p>
-            <div class="price-row">
-                <div style="font-weight: 600; font-size:18px;">$125 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
-                <button class="book-btn" onclick="openDetails('Zen Haven @ The Lofts', 'Arthur Wint Dr, Kingston', '$125', ['images/zen1.jpeg', 'images/zen2.jpeg', 'images/zen3.jpeg', 'images/zen4.jpeg', 'images/zen5.jpeg', 'images/zen6.jpeg', 'images/zen7.jpeg', 'images/zen8.jpeg', 'images/zen9.jpeg', 'images/zen10.jpeg', 'images/zen11.jpeg', 'images/zen12.jpeg', 'images/zen13.jpeg', 'images/zen14.jpeg', 'images/zen15.jpeg', 'images/zen16.jpeg'])">Details</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="images/tiny1.jpeg" class="card-img">
-        <div class="card-content">
-            <h3 style="margin:0;">Tiny Living @ Kingston</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Well-equipped room w/own entry</p>
-            <div class="price-row">
-                <div style="font-weight: 600; font-size:18px;">$65 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
-                <button class="book-btn" onclick="openDetails('Tiny Living Kingston', 'Central Kingston', '$65', ['images/tiny1.jpeg', 'images/tiny2.jpeg', 'images/tiny3.jpeg', 'images/tiny4.jpeg', 'images/tiny5.jpeg', 'images/tiny6.jpeg', 'images/tiny7.jpeg', 'images/tiny8.jpeg', 'images/tiny9.jpeg', 'images/tiny10.jpeg', 'images/tiny11.jpeg', 'images/tiny12.jpeg'])">Details</button>
             </div>
         </div>
     </div>
@@ -242,12 +231,6 @@
           <h3 style="font-size:18px; margin-bottom: 5px;">Secure Payment</h3>
           <p style="font-size:13px; color:#64748b; margin-bottom: 20px;">Pay via Credit/Debit Card or Bank Transfer.</p>
           
-          <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; opacity: 0.8;">
-            <img src="https://img.icons8.com/color/48/000000/visa.png" style="width:35px;">
-            <img src="https://img.icons8.com/color/48/000000/mastercard.png" style="width:35px;">
-            <img src="https://img.icons8.com/color/48/000000/paypal.png" style="width:35px;">
-          </div>
-
           <div style="background: #f1f5f9; padding: 20px; border-radius: 16px; margin-bottom: 15px;">
             <p style="font-size: 11px; color: #94a3b8; margin: 0; font-weight: 600;">NCB SAVINGS ACCOUNT</p>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 5px;">
@@ -269,75 +252,73 @@
     let currentNightlyRate = 0;
     const MY_PHONE = "18764313312"; 
 
-    function openDetails(name, loc, price, images) {
-      document.getElementById('modal-title').innerText = name;
-      document.getElementById('modal-location').innerText = "📍 " + loc;
-      const slider = document.getElementById('modal-slider');
-      slider.innerHTML = ''; 
-      images.forEach(url => {
-          const img = document.createElement('img');
-          img.src = url;
-          img.className = 'modal-hero-img';
-          slider.appendChild(img);
-      });
-      currentNightlyRate = parseInt(price.replace(/[^0-9]/g, ''));
-      document.getElementById('detailsModal').style.display = "block";
+    function openGallery(name, pathPrefix, count, price, loc) {
+        document.getElementById('modal-title').innerText = name;
+        document.getElementById('modal-location').innerText = "📍 " + loc;
+        
+        const slider = document.getElementById('modal-slider');
+        slider.innerHTML = ''; 
+        
+        for (let i = 1; i <= count; i++) {
+            const img = document.createElement('img');
+            img.src = `${pathPrefix}${i}.jpg`; 
+            img.className = 'modal-hero-img';
+            img.onerror = function() { this.style.display='none'; };
+            slider.appendChild(img);
+        }
+
+        currentNightlyRate = parseInt(price.replace(/[^0-9]/g, ''));
+        document.getElementById('detailsModal').style.display = "block";
     }
 
-    function closeModal() { document.getElementById('detailsModal').style.display = "none"; hideBookingOptions(); document.getElementById('bank-section').style.display = 'none'; }
-    function showBookingOptions() { document.getElementById('amenities-section').style.display = 'none'; document.getElementById('booking-section').style.display = 'block'; }
-    function hideBookingOptions() { document.getElementById('amenities-section').style.display = 'block'; document.getElementById('booking-section').style.display = 'none'; }
-    function showBankDetails() { document.getElementById('booking-section').style.display = 'none'; document.getElementById('bank-section').style.display = 'block'; }
+    function closeModal() { 
+        document.getElementById('detailsModal').style.display = "none"; 
+        hideBookingOptions(); 
+        document.getElementById('bank-section').style.display = 'none'; 
+    }
+
+    function showBookingOptions() { 
+        document.getElementById('amenities-section').style.display = 'none'; 
+        document.getElementById('booking-section').style.display = 'block'; 
+    }
+
+    function hideBookingOptions() { 
+        document.getElementById('amenities-section').style.display = 'block'; 
+        document.getElementById('booking-section').style.display = 'none'; 
+    }
+
+    function showBankDetails() { 
+        document.getElementById('booking-section').style.display = 'none'; 
+        document.getElementById('bank-section').style.display = 'block'; 
+    }
 
     function calculateTotal() {
-      const checkin = new Date(document.getElementById('modal-checkin').value);
-      const checkout = new Date(document.getElementById('modal-checkout').value);
-      const guests = parseInt(document.getElementById('modal-guests').value) || 1;
-      const summaryBox = document.getElementById('price-summary');
+        const checkin = new Date(document.getElementById('modal-checkin').value);
+        const checkout = new Date(document.getElementById('modal-checkout').value);
+        const guests = parseInt(document.getElementById('modal-guests').value) || 1;
+        const summaryBox = document.getElementById('price-summary');
 
-      if (checkin != "Invalid Date" && checkout != "Invalid Date" && checkout > checkin) {
-        const diffDays = Math.ceil(Math.abs(checkout - checkin) / (1000 * 60 * 60 * 24));
-        const extraFee = (guests > 1) ? (guests - 1) * 20 : 0;
-        const total = (currentNightlyRate + extraFee) * diffDays;
-        document.getElementById('summary-nights').innerText = diffDays + " nights";
-        document.getElementById('summary-total').innerText = `$${total}`;
-        summaryBox.style.display = 'block';
-      }
-      function openGallery(name, pathPrefix, count, price, loc) {
-    document.getElementById('modal-title').innerText = name;
-    document.getElementById('modal-location').innerText = "📍 " + loc;
-    
-    const slider = document.getElementById('modal-slider');
-    slider.innerHTML = ''; 
-    
-    // Generates the images based on the count you provided
-    for (let i = 1; i <= count; i++) {
-        const img = document.createElement('img');
-        img.src = `${pathPrefix}${i}.jpg`; // e.g. images/genesis1.jpg
-        img.className = 'modal-hero-img';
-        
-        // Hide image if it fails to load (prevents broken icons)
-        img.onerror = function() { this.style.display='none'; };
-        
-        slider.appendChild(img);
-    }
-
-    currentNightlyRate = parseInt(price.replace(/[^0-9]/g, ''));
-    document.getElementById('detailsModal').style.display = "block";
-}
+        if (checkin != "Invalid Date" && checkout != "Invalid Date" && checkout > checkin) {
+            const diffDays = Math.ceil(Math.abs(checkout - checkin) / (1000 * 60 * 60 * 24));
+            const extraFee = (guests > 1) ? (guests - 1) * 20 : 0;
+            const total = (currentNightlyRate + extraFee) * diffDays;
+            document.getElementById('summary-nights').innerText = diffDays + " nights";
+            document.getElementById('summary-total').innerText = `$${total}`;
+            summaryBox.style.display = 'block';
+        }
     }
 
     function sendWhatsApp(type) {
-      const name = document.getElementById('modal-title').innerText;
-      const total = document.getElementById('summary-total').innerText;
-      const checkin = document.getElementById('modal-checkin').value;
-      let msg = `*Islandwide Stays Inquiry*\n\nProperty: ${name}\nCheck-in: ${checkin}\nTotal: ${total}\n\n${type === 'Payment' ? 'I have sent the payment receipt.' : 'Is this available?'}`;
-      window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`);
+        const name = document.getElementById('modal-title').innerText;
+        const total = document.getElementById('summary-total').innerText;
+        const checkin = document.getElementById('modal-checkin').value;
+        let msg = `*Islandwide Stays Inquiry*\n\nProperty: ${name}\nCheck-in: ${checkin}\nTotal: ${total}\n\n${type === 'Payment' ? 'I have sent the payment receipt.' : 'Is this available?'}`;
+        window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`);
     }
 
     function copyAccountNumber() {
-      navigator.clipboard.writeText(document.getElementById('acc-num').innerText);
-      alert("Copied to clipboard!");
+        navigator.clipboard.writeText(document.getElementById('acc-num').innerText);
+        alert("Copied to clipboard!");
     }
 
     function searchProperties() {
@@ -347,17 +328,17 @@
     }
 
     function requestCardPayment() {
-      const propName = document.getElementById('modal-title').innerText;
-      const total = document.getElementById('summary-total').innerText;
-      
-      if(total === "$0") {
-          alert("Please select your dates first so we can calculate the total.");
-          showBookingOptions();
-          return;
-      }
-      alert("To keep your transaction secure, we will send a customized PayPal/Card link to your WhatsApp now.");
-      const msg = `Hi Islandwide! I'd like to pay for my stay at ${propName} (${total}) via Credit Card. Please send the secure payment link.`;
-      window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`);
+        const propName = document.getElementById('modal-title').innerText;
+        const total = document.getElementById('summary-total').innerText;
+        
+        if(total === "$0") {
+            alert("Please select your dates first so we can calculate the total.");
+            showBookingOptions();
+            return;
+        }
+        alert("To keep your transaction secure, we will send a customized PayPal/Card link to your WhatsApp now.");
+        const msg = `Hi Islandwide! I'd like to pay for my stay at ${propName} (${total}) via Credit Card. Please send the secure payment link.`;
+        window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`);
     }
   </script>
 </body>
