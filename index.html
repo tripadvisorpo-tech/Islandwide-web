@@ -87,7 +87,7 @@
     <div class="section-title">Featured Listings 🏠</div>
 
     <div class="card">
-        <img src="images/genesis1.jpg" class="card-img">
+        <img src="images/genesis1.jpg" class="card-img" onerror="this.src='images/genesis1.jpeg'">
         <div class="card-content">
             <h3 style="margin:0;">Genesis 28 Waterloo Ave</h3>
             <p style="color:#64748b; margin:5px 0;">📍 KGN 10</p>
@@ -99,7 +99,7 @@
     </div>
 
     <div class="card">
-        <img src="images/sky1.jpeg" class="card-img">
+        <img src="images/sky1.jpeg" class="card-img" onerror="this.src='images/sky1.jpg'">
         <div class="card-content">
             <h3 style="margin:0;">Sky View Retreat</h3>
             <p style="color:#64748b; margin:5px 0;">📍 Red Hills, Kingston</p>
@@ -111,7 +111,7 @@
     </div>
 
     <div class="card">
-        <img src="images/zen1.jpeg" class="card-img">
+        <img src="images/zen1.jpeg" class="card-img" onerror="this.src='images/zen1.jpg'">
         <div class="card-content">
             <h3 style="margin:0;">Zen Haven @ The Lofts</h3>
             <p style="color:#64748b; margin:5px 0;">📍 Arthur Wint Dr, Kingston</p>
@@ -123,7 +123,7 @@
     </div>
 
     <div class="card">
-        <img src="images/apt1.jpg" class="card-img">
+        <img src="images/apt1.jpg" class="card-img" onerror="this.src='images/apt1.jpeg'">
         <div class="card-content">
             <h3 style="margin:0;">Modern Apartment MoBay</h3>
             <p style="color:#64748b; margin:5px 0;">📍 Montego Bay, St. James</p>
@@ -135,31 +135,31 @@
     </div>
 
     <div class="card">
-        <img src="images/modern1.jpeg" class="card-img">
+        <img src="images/modern1.jpeg" class="card-img" onerror="this.src='images/modern1.jpg'">
         <div class="card-content">
             <h3 style="margin:0;">Modern Studio MoBay</h3>
             <p style="color:#64748b; margin:5px 0;">📍 Montego Bay, St. James</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$120 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
-                <button class="book-btn" onclick="openGallery('Modern Studio1', 'images/modern1.jpeg', 14, '$120', 'Montego Bay')">Details</button>
+                <button class="book-btn" onclick="openGallery('Modern Studio', 'images/modern', 14, '$120', 'Montego Bay')">Details</button>
             </div>
         </div>
     </div>
 
     <div class="card">
-        <img src="images/mahogany1.jpeg" class="card-img">
+        <img src="images/mahogany1.jpeg" class="card-img" onerror="this.src='images/mahogany1.jpg'">
         <div class="card-content">
             <h3 style="margin:0;">Mahogany at Carib</h3>
             <p style="color:#64748b; margin:5px 0;">📍 Ocho Rios, St. Ann</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$140 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
-                <button class="book-btn" onclick="openGallery('Mahogany at Carib', 'images/mahogany1.jpeg', 13, '$140', 'Ocho Rios')">Details</button>
+                <button class="book-btn" onclick="openGallery('Mahogany at Carib', 'images/mahogany', 13, '$140', 'Ocho Rios')">Details</button>
             </div>
         </div>
     </div>
 
     <div class="card">
-        <img src="images/mystic1.jpeg" class="card-img">
+        <img src="images/mystic1.jpeg" class="card-img" onerror="this.src='images/mystic1.jpg'">
         <div class="card-content">
             <h3 style="margin:0;">Mystic Ridge Studio</h3>
             <p style="color:#64748b; margin:5px 0;">📍 Ocho Rios, St. Ann</p>
@@ -171,7 +171,7 @@
     </div>
 
     <div class="card">
-        <img src="images/tiny1.jpeg" class="card-img">
+        <img src="images/tiny1.jpeg" class="card-img" onerror="this.src='images/tiny1.jpg'">
         <div class="card-content">
             <h3 style="margin:0;">Tiny Living @ Kingston</h3>
             <p style="color:#64748b; margin:5px 0;">📍 Central Kingston</p>
@@ -183,7 +183,7 @@
     </div>
 
     <div class="card">
-        <img src="images/summit1.jpeg" class="card-img">
+        <img src="images/summit1.jpeg" class="card-img" onerror="this.src='images/summit1.jpg'">
         <div class="card-content">
             <h3 style="margin:0;">Summit 165</h3>
             <p style="color:#64748b; margin:5px 0;">📍 Montego Bay, St. James</p>
@@ -257,9 +257,18 @@
         
         for (let i = 1; i <= count; i++) {
             const img = document.createElement('img');
+            // Try .jpg first
             img.src = `${prefix}${i}.jpg`; 
             img.className = 'modal-hero-img';
-            img.onerror = function() { this.style.display='none'; };
+            
+            // If .jpg fails, try .jpeg
+            img.onerror = function() {
+                if (this.src.endsWith('.jpg')) {
+                    this.src = this.src.replace('.jpg', '.jpeg');
+                } else {
+                    this.style.display = 'none';
+                }
+            };
             slider.appendChild(img);
         }
 
