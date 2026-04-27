@@ -42,7 +42,6 @@
     .image-slider::-webkit-scrollbar { display: none; }
     .modal-hero-img { scroll-snap-align: start; min-width: 100%; height: 300px; object-fit: cover; }
 
-    /* IMAGE COUNTER */
     .image-counter {
       position: absolute; bottom: 15px; right: 15px; background: rgba(0, 0, 0, 0.6);
       color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; z-index: 5; pointer-events: none;
@@ -74,76 +73,112 @@
       <img src="Logo.jpg" class="logo">
       <div class="title">Islandwide</div>
     </div>
-    <div class="subtitle">Premium Accommodations across 🇯🇲</div>
+    <div class="subtitle">Premium Stays Across Jamaica 🇯🇲</div>
   </div>
 
   <div class="search-card">
     <div class="field">
       <label>Location</label>
-      <input type="text" id="location-input" onkeyup="searchProperties()" placeholder="Where to? (e.g. Kingston)">
+      <input type="text" id="location-input" onkeyup="searchProperties()" placeholder="Where to? (e.g. Ocho Rios)">
     </div>
     <button class="search-btn" onclick="searchProperties()">Find Your Stay</button>
   </div>
 
   <div class="container" id="property-list">
-    <div class="section-title">Featured Listings 🏠</div>
+    <div class="section-title">Latest Listings 🏠</div>
 
     <div class="card">
-        <img src="images/genesis1.jpg" class="card-img">
+        <img src="images/seabreeze1.jpg" class="card-img">
         <div class="card-content">
-            <h3 style="margin:0;">Genesis 28 Waterloo Ave</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 KGN 10</p>
+            <h3 style="margin:0;">Sea Breeze Heights</h3>
+            <p style="color:#64748b; margin:5px 0;">📍 Ocho Rios (Columbus Heights)</p>
             <div class="price-row">
-                <div style="font-weight: 600; font-size:18px;">$150</div>
-                <button class="book-btn" onclick="openGallery('Genesis 28', 'images/genesis', 31, '$150', 'Waterloo Ave, KGN 10', '🏊 Pool • 🎬 Movie • 🧖 Sauna • 🏋️ Gym', 'Ultra-modern lifestyle with a rooftop bar and smart features.')">Details</button>
+                <div style="font-weight: 600; font-size:18px;">$130</div>
+                <button class="book-btn" onclick="openGallery('Sea Breeze Heights', 'images/seabreeze', 20, '$130', 'Ocho Rios', '🏊 Pool • 🌅 Ocean View • ❄️ A/C • 📶 Wi-Fi', '1 Bedroom unit with a beautiful oceanic view. Includes Netflix, Gymnasium, and 24-hour security.')">Details</button>
             </div>
         </div>
     </div>
 
     <div class="card">
-        <img src="images/zen1.jpeg" class="card-img">
+        <img src="images/shoreline1.jpg" class="card-img">
         <div class="card-content">
-            <h3 style="margin:0;">Zen Haven @ The Lofts</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Kingston</p>
+            <h3 style="margin:0;">The Shoreline Suite</h3>
+            <p style="color:#64748b; margin:5px 0;">📍 Portmore, St. Catherine</p>
             <div class="price-row">
-                <div style="font-weight: 600; font-size:18px;">$125</div>
-                <button class="book-btn" onclick="openGallery('Zen Haven', 'images/zen', 31, '$125', 'Kingston', '🔐 Smartlock • 🏋️ Gym • 🏃 Jogging Trail', 'Resort-style living across from the National Stadium.')">Details</button>
+                <div style="font-weight: 600; font-size:18px;">$95</div>
+                <button class="book-btn" onclick="openGallery('The Shoreline Suite', 'images/shoreline', 11, '$95', 'Portmore', '🏊 Pool • 🌊 Ocean-view • 🤫 Quiet Area', 'Peaceful getaway with a pool and laid-back vibes. Ideal for couples seeking a romantic, relaxing escape.')">Details</button>
             </div>
         </div>
     </div>
 
     <div class="card">
-        <img src="images/sky1.jpeg" class="card-img">
+        <img src="images/bridgeview1.jpg" class="card-img">
         <div class="card-content">
-            <h3 style="margin:0;">Sky View Retreat</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Ocho Rios</p>
+            <h3 style="margin:0;">Bridgeview Central</h3>
+            <p style="color:#64748b; margin:5px 0;">📍 Portmore</p>
             <div class="price-row">
-                <div style="font-weight: 600; font-size:18px;">$165</div>
-                <button class="book-btn" onclick="openGallery('Sky View Retreat', 'images/sky', 38, '$165', 'Ocho Rios', '🏖️ Beachfront • 🏊 Pool • 🏙️ 8th Floor View', 'Immaculate beachfront apt with spectacular views.')">Details</button>
+                <div style="font-weight: 600; font-size:18px;">$90</div>
+                <button class="book-btn" onclick="openGallery('Bridgeview Central', 'images/bridgeview', 25, '$90', 'Portmore', '📍 Central • ❄️ A/C • 🛍️ Near Mall', 'Keep it simple at this peaceful and centrally-located place. Close to Portmore Mall and Kingston.')">Details</button>
             </div>
         </div>
     </div>
 
     <div class="card">
-        <img src="images/tiny1.jpeg" class="card-img">
+        <img src="images/paradise1.jpg" class="card-img">
         <div class="card-content">
-            <h3 style="margin:0;">Tiny Living @ Kingston</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Kingston</p>
+            <h3 style="margin:0;">Paradise View</h3>
+            <p style="color:#64748b; margin:5px 0;">📍 Discovery Bay</p>
             <div class="price-row">
-                <div style="font-weight: 600; font-size:18px;">$65</div>
-                <button class="book-btn" onclick="openGallery('Tiny Living', 'images/tiny', 61, '$65', 'Kingston', '🧱 Tiles • 💻 Workstation • 🍳 Kitchenette', 'Cozy converted tiny home perfect for solo travelers.')">Details</button>
+                <div style="font-weight: 600; font-size:18px;">$140</div>
+                <button class="book-btn" onclick="openGallery('Paradise View', 'images/paradise', 18, '$140', 'Discovery Bay', '🏖️ Near Beach • ❄️ A/C • 🔐 Smartlock', 'Escape to a stylish retreat. Modern home near Puerto Seco Beach. Ideal for small groups.')">Details</button>
             </div>
         </div>
     </div>
 
     <div class="card">
-        <img src="images/summit1.jpeg" class="card-img">
+        <img src="images/drumz1.jpg" class="card-img">
         <div class="card-content">
-            <h3 style="margin:0;">Summit 165</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Montego Bay</p>
+            <h3 style="margin:0;">Drumz Oasis</h3>
+            <p style="color:#64748b; margin:5px 0;">📍 Discovery Bay</p>
             <div class="price-row">
-                <div style="font-weight: 600; font-size:18px;">$210</div>
-                <button class="book-btn" onclick="openGallery('Summit 165', 'images/summit', 71, '$210', 'Montego Bay', '✨ Chic Decor • 🔐 Smartlock • 🏖️ Hip Strip', 'Centrally located stylish apartment.')">Details</button>
+                <div style="font-weight: 600; font-size:18px;">$130</div>
+                <button class="book-btn" onclick="openGallery('Drumz Oasis', 'images/drumz', 21, '$130', 'Discovery Bay', '🏡 Family Friendly • 🌅 Views • 🔐 Smartlock', 'A modern home-away-from-home to relax with the whole family. Peaceful neighborhood.')">Details</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="images/loft1.jpg" class="card-img">
+        <div class="card-content">
+            <h3 style="margin:0;">Urban Loft</h3>
+            <p style="color:#64748b; margin:5px 0;">📍 Falmouth</p>
+            <div class="price-row">
+                <div style="font-weight: 600; font-size:18px;">$100</div>
+                <button class="book-btn" onclick="openGallery('Urban Loft', 'images/loft', 20, '$100', 'Falmouth', '🛡️ Gated • 🕒 24h Security • 🧺 Laundry', 'Newly renovated apartment in Holland Estates. 10 mins to Martha Brae River.')">Details</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="images/devon1.jpg" class="card-img">
+        <div class="card-content">
+            <h3 style="margin:0;">Devon’s Ocean View</h3>
+            <p style="color:#64748b; margin:5px 0;">📍 Negril</p>
+            <div class="price-row">
+                <div style="font-weight: 600; font-size:18px;">$129</div>
+                <button class="book-btn" onclick="openGallery('Devon’s Ocean View', 'images/devon', 25, '$129', 'Negril', '🏊 Pool • 🛋️ Modern • 🚪 Total Privacy', 'Spacious and modern private studio at Aqueducts of Negril. Total privacy.')">Details</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="images/upscayle1.jpg" class="card-img">
+        <div class="card-content">
+            <h3 style="margin:0;">UpScayle Villa</h3>
+            <p style="color:#64748b; margin:5px 0;">📍 Mandeville</p>
+            <div class="price-row">
+                <div style="font-weight: 600; font-size:18px;">$80</div>
+                <button class="book-btn" onclick="openGallery('UpScayle Villa', 'images/upscayle', 20, '$80', 'Mandeville', '🐾 Pets Welcome • 🔐 Smartlock • 🤫 Quiet', 'Modern self-contained apartment in a quiet residential area.')">Details</button>
             </div>
         </div>
     </div>
@@ -152,16 +187,13 @@
   <div id="detailsModal" class="modal">
     <div class="modal-content">
       <span style="position: absolute; top: 15px; right: 20px; font-size: 32px; color: white; cursor: pointer; z-index: 10; text-shadow: 0 2px 5px black;" onclick="closeModal()">&times;</span>
-      
       <div class="slider-container">
         <div class="image-slider" id="modal-slider" onscroll="updateCounter()"></div>
         <div id="img-number" class="image-counter">1 / 1</div>
       </div>
-
       <div style="padding: 24px;">
         <h2 id="modal-title" style="margin: 0; font-size: 22px;"></h2>
         <p id="modal-location" style="color: #64748b; margin: 8px 0 20px;"></p>
-
         <div id="amenities-section">
           <h3 style="font-size:16px;">Amenities</h3>
           <p id="amenities-text" style="font-size:14px; color: #1e293b; line-height: 1.6;"></p>
@@ -169,7 +201,6 @@
           <p id="details-text" style="font-size:14px; color: #64748b; line-height: 1.6;"></p>
           <button class="search-btn" style="margin-top:20px;" onclick="showBookingOptions()">Check Availability</button>
         </div>
-
         <div id="booking-section" style="display: none;">
           <h3 style="font-size:16px;">Stay Details</h3>
           <div style="display: flex; gap: 10px;">
@@ -178,13 +209,12 @@
           </div>
           <div class="field">
             <label>Number of Guests</label>
-            <input type="number" id="modal-guests" value="1" min="1" max="10" onchange="calculateTotal()">
-            <p style="font-size: 11px; color: var(--accent); margin: 5px 0 0;">$30 per extra person (after 1st guest)</p>
+            <input type="number" id="modal-guests" value="2" min="1" max="10" onchange="calculateTotal()">
+            <p style="font-size: 11px; color: var(--accent); margin: 5px 0 0;">$30 per person (starting from 3rd guest)</p>
           </div>
-
           <div id="price-summary" style="background: var(--primary); color: white; padding: 20px; border-radius: 16px; margin: 20px 0; display: none;">
             <div style="display: flex; justify-content: space-between; font-size: 14px;"><span>Nights:</span><span id="summary-nights">0</span></div>
-            <div style="display: flex; justify-content: space-between; font-size: 14px; margin-top: 5px;"><span>Guests:</span><span id="summary-guests">1</span></div>
+            <div style="display: flex; justify-content: space-between; font-size: 14px; margin-top: 5px;"><span>Guests:</span><span id="summary-guests">2</span></div>
             <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 20px; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 10px;"><span>Total:</span><span id="summary-total">$0</span></div>
           </div>
           <button class="wa-btn" onclick="sendWhatsApp()">Book via WhatsApp 💬</button>
@@ -236,15 +266,12 @@
     function calculateTotal() {
         const checkin = new Date(document.getElementById('modal-checkin').value);
         const checkout = new Date(document.getElementById('modal-checkout').value);
-        const guests = parseInt(document.getElementById('modal-guests').value) || 1;
-
+        const guests = parseInt(document.getElementById('modal-guests').value) || 2;
         if (checkin != "Invalid Date" && checkout != "Invalid Date" && checkout > checkin) {
             const nights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
-            
-            // Logic: Base Rate + ($30 * (Total Guests - 1)) per night
-            const extraGuestFee = (guests > 1) ? (guests - 1) * 30 : 0;
+            // Fee logic: Base price covers 2. $30 for every guest ABOVE 2.
+            const extraGuestFee = (guests > 2) ? (guests - 2) * 30 : 0;
             const finalTotal = (currentNightlyRate + extraGuestFee) * nights;
-
             document.getElementById('summary-nights').innerText = nights;
             document.getElementById('summary-guests').innerText = guests;
             document.getElementById('summary-total').innerText = `$${finalTotal}`;
@@ -255,19 +282,10 @@
     function sendWhatsApp() {
         const name = document.getElementById('modal-title').innerText;
         const total = document.getElementById('summary-total').innerText;
-        const checkin = document.getElementById('modal-checkin').value;
-        const checkout = document.getElementById('modal-checkout').value;
-        const guests = document.getElementById('modal-guests').value;
-
-        // Custom Automated Message Structure
-        const message = `*Islandwide Stays Booking Inquiry*%0A%0A` +
-                        `*Property:* ${name}%0A` +
-                        `*Check-in:* ${checkin}%0A` +
-                        `*Check-out:* ${checkout}%0A` +
-                        `*Guests:* ${guests}%0A` +
-                        `*Total Quote:* ${total}%0A%0A` +
-                        `Is this available for these dates?`;
-
+        const cin = document.getElementById('modal-checkin').value;
+        const cout = document.getElementById('modal-checkout').value;
+        const gst = document.getElementById('modal-guests').value;
+        const message = `*Islandwide Stays Booking*%0A%0A*Property:* ${name}%0A*Check-in:* ${cin}%0A*Check-out:* ${cout}%0A*Guests:* ${gst}%0A*Total Quote:* ${total}%0A%0AIs this stay available?`;
         window.open(`https://wa.me/${MY_PHONE}?text=${message}`);
     }
 
