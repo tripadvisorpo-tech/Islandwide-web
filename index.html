@@ -15,7 +15,7 @@
 
     body { margin: 0; font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); }
 
-    /* HERO SECTION */
+    /* HERO & HEADER */
     .hero { 
       background: linear-gradient(rgba(10, 31, 68, 0.6), rgba(10, 31, 68, 0.6)), 
                   url('https://images.unsplash.com/photo-1524779709304-40b5a3560c60?auto=format&fit=crop&w=1200');
@@ -25,7 +25,6 @@
     .header { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 10px; }
     .logo { width: 55px; height: 55px; border-radius: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 2px solid rgba(255,255,255,0.2); }
     .title { font-size: 32px; font-weight: 600; text-shadow: 0 2px 10px rgba(0,0,0,0.3); letter-spacing: -0.5px; }
-    .subtitle { font-size: 16px; opacity: 0.9; font-weight: 300; }
 
     /* SEARCH CARD */
     .search-card { 
@@ -33,28 +32,32 @@
       width: 90%; max-width: 500px; margin: -80px auto 30px; border-radius: 24px; padding: 20px; 
       box-shadow: 0 20px 40px rgba(0,0,0,0.2); 
     }
-    .search-card .field { background: rgba(255, 255, 255, 0.1); }
-    .search-card .field label { color: rgba(255,255,255,0.7); }
-    .search-card .field input { color: white; }
-    .search-card .field input::placeholder { color: rgba(255,255,255,0.4); }
     
     /* MODAL & SLIDER */
     .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(5px); }
     .modal-content { background: white; margin: 2% auto; width: 92%; max-width: 480px; max-height: 90vh; border-radius: 28px; overflow-y: auto; position: relative; }
-    .image-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; height: 280px; scrollbar-width: none; border-radius: 28px 28px 0 0; }
+    
+    .slider-container { position: relative; background: black; border-radius: 28px 28px 0 0; }
+    .image-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; height: 300px; scrollbar-width: none; border-radius: 28px 28px 0 0; }
     .image-slider::-webkit-scrollbar { display: none; }
-    .modal-hero-img { scroll-snap-align: start; min-width: 100%; height: 280px; object-fit: cover; }
+    .modal-hero-img { scroll-snap-align: start; min-width: 100%; height: 300px; object-fit: cover; }
+
+    /* IMAGE COUNTER */
+    .image-counter {
+      position: absolute; bottom: 15px; right: 15px; background: rgba(0, 0, 0, 0.6);
+      color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; z-index: 5;
+    }
 
     /* UI ELEMENTS */
     .field { display: flex; flex-direction: column; padding: 12px; border-radius: 12px; background: #f1f5f9; margin-bottom: 10px; }
     .field label { font-size: 10px; text-transform: uppercase; font-weight: 600; color: #94a3b8; }
     .field input { border: none; outline: none; font-size: 16px; background: transparent; font-family: 'Poppins'; width: 100%; }
     
-    .wa-btn { background: #25d366; color: white; border: none; padding: 16px; border-radius: 16px; font-weight: 600; cursor: pointer; width: 100%; font-size: 16px; margin-top: 10px; }
-    .book-btn { padding: 10px 20px; border: 2px solid var(--primary); border-radius: 12px; background: transparent; color: var(--primary); font-weight: 600; cursor: pointer; }
     .search-btn { width: 100%; padding: 16px; border: none; border-radius: 16px; background: var(--accent); color: white; font-weight: 600; cursor: pointer; }
+    .wa-btn { background: #25d366; color: white; border: none; padding: 16px; border-radius: 16px; font-weight: 600; cursor: pointer; width: 100%; margin-top: 10px; }
+    .book-btn { padding: 10px 20px; border: 2px solid var(--primary); border-radius: 12px; background: transparent; color: var(--primary); font-weight: 600; cursor: pointer; }
 
-    /* CARDS */
+    /* PROPERTY CARDS */
     .container { padding: 0 20px 60px; }
     .section-title { font-size: 20px; font-weight: 600; margin: 20px 0; color: var(--primary); }
     .card { background: white; border-radius: 24px; overflow: hidden; margin-bottom: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
@@ -80,7 +83,7 @@
       <label>Location</label>
       <input type="text" id="location-input" onkeyup="searchProperties()" placeholder="Where to? (e.g. Kingston)">
     </div>
-    <button class="search-btn" onclick="searchProperties()">Check Availability</button>
+    <button class="search-btn" onclick="searchProperties()">Find Your Stay</button>
   </div>
 
   <div class="container" id="property-list">
@@ -93,7 +96,7 @@
             <p style="color:#64748b; margin:5px 0;">📍 KGN 10</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$150</div>
-                <button class="book-btn" onclick="openGallery('Genesis 28: Sophisticated Urban Bliss', 'images/genesis', 31, '$150', 'Waterloo Ave, KGN 10', '🏊 Infinity Pool • 🎬 Movie Theater • 🧖 Sauna • 🏋️ Gym • 🎤 Voice Controlled • 🛡️ 24h Security', 'Enjoy an ultra-modern lifestyle with high-end amenities including a rooftop bar, conference room, and automated smart features. Fully wheelchair accessible.')">Details</button>
+                <button class="book-btn" onclick="openGallery('Genesis 28: Sophisticated Urban Bliss', 'images/genesis', 31, '$150', 'Waterloo Ave, KGN 10', '🏊 Pool • 🎬 Movie Theater • 🧖 Sauna • 🏋️ Gym • 🎤 Voice Controlled', 'Ultra-modern centrally-located apartment. Features a movie theater, sauna, infinity pool, and smart appliances. Modern, clean, and voice-controlled.')">Details</button>
             </div>
         </div>
     </div>
@@ -105,7 +108,7 @@
             <p style="color:#64748b; margin:5px 0;">📍 Kingston</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$125</div>
-                <button class="book-btn" onclick="openGallery('Zen Haven @ The Lofts', 'images/zen', 16, '$125', 'Arthur Wint Dr, Kingston', '🔐 Smartlock • 🏋️ Gym • 🏃 Jogging Trail • 🧺 Washer/Dryer • 📶 High-Speed WiFi', 'Resort-style living across from the National Stadium. Features a private balcony, fully equipped kitchen, and luxury airport transfer options.')">Details</button>
+                <button class="book-btn" onclick="openGallery('Zen Haven @ The Lofts', 'images/zen', 31, '$125', 'Arthur Wint Dr, Kingston', '🔐 Smartlock • 🏋️ Gym • 🏃 Jogging Trail • 🧺 Washer/Dryer • 📶 WiFi', 'Resort-style apartment across from National Stadium. Fully furnished with high-speed WiFi, private balcony, and available airport transfers.')">Details</button>
             </div>
         </div>
     </div>
@@ -117,7 +120,7 @@
             <p style="color:#64748b; margin:5px 0;">📍 Ocho Rios</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$165</div>
-                <button class="book-btn" onclick="openGallery('Sky View Retreat', 'images/sky', 21, '$165', 'Ocho Rios, St. Ann', '🏖️ Beachfront • 🏊 Pool • 👑 King Bed • 🏙️ 8th Floor View • ❄️ Dual A/C', 'Immaculate beachfront apartment on the 8th floor with spectacular views. Steps away from Starbucks and Margaritaville.')">Details</button>
+                <button class="book-btn" onclick="openGallery('Sky View Retreat', 'images/sky', 38, '$165', 'Ocho Rios, St. Ann', '🏖️ Beachfront • 🏊 Pool • 👑 King Bed • 🏙️ 8th Floor View', 'Immaculate 8th-floor beachfront apt. Includes king bed, full kitchen, and steps from Starbucks and nightlife. Stunning city and ocean views.')">Details</button>
             </div>
         </div>
     </div>
@@ -129,7 +132,7 @@
             <p style="color:#64748b; margin:5px 0;">📍 Montego Bay</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$180</div>
-                <button class="book-btn" onclick="openGallery('Modern Apartment Montego Bay', 'images/apt', 15, '$180', 'Montego Bay, St. James', '🏊 Community Pool • 🔐 Keyless Entry • ☕ Patio • 🍳 Chef\'s Kitchen • 🛡️ Gated', '850 sq ft of blissful luxury. Ground level with coastline views and a designated parking slot.')">Details</button>
+                <button class="book-btn" onclick="openGallery('Modern Apartment Montego Bay', 'images/apt', 15, '$180', 'Montego Bay', '🏊 Pool • 🔐 Keyless • ☕ Patio • 🛡️ Gated • 🍳 Full Kitchen', '850 sq ft of blissful luxury. Ground level apartment with coastline views, private pool access, and secure gated parking.')">Details</button>
             </div>
         </div>
     </div>
@@ -141,7 +144,7 @@
             <p style="color:#64748b; margin:5px 0;">📍 Coral Gardens</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$120</div>
-                <button class="book-btn" onclick="openGallery('Modern Studio @ Coral Gardens', 'images/modern', 14, '$120', 'Montego Bay', '🛒 Near Shopping • 🧺 Private Laundry • 🚿 Walk-in Shower • 🚗 Free Parking', 'Quiet community just 2 mins from Whitter Village. Features a full kitchen and grocery stocking service available.')">Details</button>
+                <button class="book-btn" onclick="openGallery('Modern Studio @ Coral Gardens', 'images/modern', 16, '$120', 'Montego Bay', '🛒 Near Shopping • 🧺 Private Laundry • 🚿 Walk-in Shower', 'Modern Caribbean comfort in prestigious Coral Gardens. 2 mins from shopping, 9 mins from airport. Grocery stocking available.')">Details</button>
             </div>
         </div>
     </div>
@@ -153,19 +156,7 @@
             <p style="color:#64748b; margin:5px 0;">📍 Ocho Rios</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$140</div>
-                <button class="book-btn" onclick="openGallery('Mahogany at Carib', 'images/mahogany', 13, '$140', 'Ocho Rios, St. Ann', '🛏️ King Bed • 🏊 Pool • 🍽️ Alfresco Dining • ❄️ A/C • 🚿 Private Bath', 'Newly built modern property. Enjoy a private king bedroom suite and shared living spaces in a tropical retreat.')">Details</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="images/mystic1.jpeg" class="card-img">
-        <div class="card-content">
-            <h3 style="margin:0;">Mystic Ridge Studio</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Ocho Rios</p>
-            <div class="price-row">
-                <div style="font-weight: 600; font-size:18px;">$110</div>
-                <button class="book-btn" onclick="openGallery('Mystic Ridge Studio', 'images/mystic', 13, '$110', 'Ocho Rios, St. Ann', '🏊 Pool Access • 📍 Central Location • 📦 Lockbox Check-in • 🤫 Quiet Area', 'A peaceful studio just 3 minutes from the heart of Ochi town. Simple, central, and convenient.')">Details</button>
+                <button class="book-btn" onclick="openGallery('Mahogany at Carib', 'images/mahogany', 15, '$140', 'Ocho Rios', '🛏️ King Bed • 🏊 Pool • 🍽️ Alfresco Dining • ❄️ A/C', 'Newly built modern property. Guests enjoy a king bedroom with a private attached bathroom and shared resort-style living spaces.')">Details</button>
             </div>
         </div>
     </div>
@@ -177,7 +168,7 @@
             <p style="color:#64748b; margin:5px 0;">📍 Kingston</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$65</div>
-                <button class="book-btn" onclick="openGallery('Tiny Living @ Kingston', 'images/tiny', 12, '$65', 'Kingston, Jamaica', '🧱 Porcelain Tiles • 💻 Workstation • 🍳 Kitchenette • 🧺 Washer/Dryer', 'A cozy converted tiny home perfect for solo travelers or workcations. Experience charm and privacy in a well-designed setting.')">Details</button>
+                <button class="book-btn" onclick="openGallery('Tiny Living @ Kingston', 'images/tiny', 61, '$65', 'Kingston', '🧱 Porcelain Tiles • 💻 Workstation • 🍳 Kitchenette • 🔐 Smartlock', 'Cozy converted tiny home perfect for solo travelers or focused work. Privacy, simplicity, and comfort in a compact design.')">Details</button>
             </div>
         </div>
     </div>
@@ -189,7 +180,7 @@
             <p style="color:#64748b; margin:5px 0;">📍 Montego Bay</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$210</div>
-                <button class="book-btn" onclick="openGallery('Summit 165: Stylish & Chic', 'images/summit', 11, '$210', 'Montego Bay, St. James', '✨ Chic Decor • 🔐 Smartlock • 🏖️ Near Hip Strip • 🏥 Near Hospital', 'Stylish and chic apartment in close proximity to the Hip Strip and Cornwall Regional Hospital.')">Details</button>
+                <button class="book-btn" onclick="openGallery('Summit 165: Stylish & Chic', 'images/summit', 71, '$210', 'Montego Bay', '✨ Chic Decor • 🔐 Smartlock • 🏖️ Near Hip Strip • 🚗 Car Rental', 'Centrally located stylish apartment. Minutes from Doctor\'s Cave Beach. Car rental and personal driver services available.')">Details</button>
             </div>
         </div>
     </div>
@@ -198,7 +189,12 @@
   <div id="detailsModal" class="modal">
     <div class="modal-content">
       <span style="position: absolute; top: 15px; right: 20px; font-size: 32px; color: white; cursor: pointer; z-index: 10; text-shadow: 0 2px 5px black;" onclick="closeModal()">&times;</span>
-      <div class="image-slider" id="modal-slider"></div>
+      
+      <div class="slider-container">
+        <div class="image-slider" id="modal-slider" onscroll="updateCounter()"></div>
+        <div id="img-number" class="image-counter">1 / 1</div>
+      </div>
+
       <div style="padding: 24px;">
         <h2 id="modal-title" style="margin: 0; font-size: 22px;"></h2>
         <p id="modal-location" style="color: #64748b; margin: 8px 0 20px;"></p>
@@ -206,10 +202,8 @@
         <div id="amenities-section">
           <h3 style="font-size:16px;">Amenities</h3>
           <p id="amenities-text" style="font-size:14px; color: #1e293b; line-height: 1.6;"></p>
-          
           <h3 style="font-size:16px; margin-top: 20px;">The Space</h3>
           <p id="details-text" style="font-size:14px; color: #64748b; line-height: 1.6;"></p>
-          
           <button class="search-btn" style="margin-top:20px;" onclick="showBookingOptions()">Check Availability</button>
         </div>
 
@@ -219,31 +213,12 @@
             <div class="field" style="flex: 1;"><label>Check-in</label><input type="date" id="modal-checkin" onchange="calculateTotal()"></div>
             <div class="field" style="flex: 1;"><label>Check-out</label><input type="date" id="modal-checkout" onchange="calculateTotal()"></div>
           </div>
-          <div class="field"><label>Guests</label><input type="number" id="modal-guests" value="1" min="1" onchange="calculateTotal()"></div>
-
           <div id="price-summary" style="background: var(--primary); color: white; padding: 20px; border-radius: 16px; margin: 20px 0; display: none;">
-            <div style="display: flex; justify-content: space-between; font-size: 14px;"><span>Total Nights:</span><span id="summary-nights">0</span></div>
-            <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 20px; margin-top: 8px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 8px;"><span>Total to Pay:</span><span id="summary-total">$0</span></div>
+            <div style="display: flex; justify-content: space-between; font-size: 14px;"><span>Nights:</span><span id="summary-nights">0</span></div>
+            <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 20px; margin-top: 8px;"><span>Total:</span><span id="summary-total">$0</span></div>
           </div>
-
           <button class="wa-btn" onclick="sendWhatsApp('Booking')">Book via WhatsApp 💬</button>
-          <button class="book-btn" style="width:100%; margin-top:10px;" onclick="showBankDetails()">Pay via Bank Transfer 🏦</button>
           <button class="book-btn" style="border:none; margin-top:10px; width:100%;" onclick="hideBookingOptions()">← Back</button>
-        </div>
-
-        <div id="bank-section" style="display: none;">
-          <h3 style="font-size:18px; margin-bottom: 5px;">Secure Payment</h3>
-          <p style="font-size:13px; color:#64748b; margin-bottom: 20px;">NCB Bank Details</p>
-          <div style="background: #f1f5f9; padding: 20px; border-radius: 16px; margin-bottom: 15px;">
-            <p style="font-size: 11px; color: #94a3b8; margin: 0; font-weight: 600;">NCB SAVINGS ACCOUNT</p>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 5px;">
-                <p id="acc-num" style="font-weight: 600; font-size: 18px; color: var(--primary); margin: 0;">123456789</p>
-                <span onclick="copyAccountNumber()" style="font-size: 11px; color: var(--accent); cursor: pointer; font-weight: 600; background: white; padding: 5px 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">COPY</span>
-            </div>
-            <p style="font-size: 12px; margin: 10px 0 0 0; color: #1e293b;">Account Name: <b>Islandwide Stays Ltd.</b></p>
-          </div>
-          <button class="wa-btn" onclick="sendWhatsApp('Payment')" style="background: #0a1f44;">I've Sent the Transfer 💸</button>
-          <button class="book-btn" onclick="showBookingOptions()" style="border:none; margin-top:10px; width:100%;">← Back</button>
         </div>
       </div>
     </div>
@@ -251,14 +226,16 @@
 
   <script>
     let currentNightlyRate = 0;
+    let totalImages = 0;
     const MY_PHONE = "18764313312"; 
 
     function openGallery(name, prefix, count, price, loc, amenities, desc) {
         document.getElementById('modal-title').innerText = name;
         document.getElementById('modal-location').innerText = "📍 " + loc;
         document.getElementById('amenities-text').innerText = amenities;
-        document.getElementById('details-text').innerText = desc || "";
-
+        document.getElementById('details-text').innerText = desc;
+        
+        totalImages = count;
         const slider = document.getElementById('modal-slider');
         slider.innerHTML = ''; 
         
@@ -266,75 +243,49 @@
             const img = document.createElement('img');
             img.src = `${prefix}${i}.jpg`; 
             img.className = 'modal-hero-img';
-            
             img.onerror = function() {
-                if (this.src.endsWith('.jpg')) {
-                    this.src = this.src.replace('.jpg', '.jpeg');
-                } else {
-                    this.style.display = 'none';
-                }
+                if (this.src.endsWith('.jpg')) this.src = this.src.replace('.jpg', '.jpeg');
+                else this.style.display = 'none';
             };
             slider.appendChild(img);
         }
 
+        slider.scrollLeft = 0;
+        document.getElementById('img-number').innerText = `1 / ${totalImages}`;
         currentNightlyRate = parseInt(price.replace(/[^0-9]/g, ''));
         document.getElementById('detailsModal').style.display = "block";
     }
 
-    function closeModal() { 
-        document.getElementById('detailsModal').style.display = "none"; 
-        hideBookingOptions(); 
-        document.getElementById('bank-section').style.display = 'none'; 
+    function updateCounter() {
+        const slider = document.getElementById('modal-slider');
+        const page = Math.round(slider.scrollLeft / slider.offsetWidth) + 1;
+        document.getElementById('img-number').innerText = `${page} / ${totalImages}`;
     }
 
-    function showBookingOptions() { 
-        document.getElementById('amenities-section').style.display = 'none'; 
-        document.getElementById('booking-section').style.display = 'block'; 
-    }
-
-    function hideBookingOptions() { 
-        document.getElementById('amenities-section').style.display = 'block'; 
-        document.getElementById('booking-section').style.display = 'none'; 
-    }
-
-    function showBankDetails() { 
-        document.getElementById('booking-section').style.display = 'none'; 
-        document.getElementById('bank-section').style.display = 'block'; 
-    }
+    function closeModal() { document.getElementById('detailsModal').style.display = "none"; hideBookingOptions(); }
+    function showBookingOptions() { document.getElementById('amenities-section').style.display = 'none'; document.getElementById('booking-section').style.display = 'block'; }
+    function hideBookingOptions() { document.getElementById('amenities-section').style.display = 'block'; document.getElementById('booking-section').style.display = 'none'; }
 
     function calculateTotal() {
         const checkin = new Date(document.getElementById('modal-checkin').value);
         const checkout = new Date(document.getElementById('modal-checkout').value);
-        const guests = parseInt(document.getElementById('modal-guests').value) || 1;
-        const summaryBox = document.getElementById('price-summary');
-
         if (checkin != "Invalid Date" && checkout != "Invalid Date" && checkout > checkin) {
-            const diffDays = Math.ceil(Math.abs(checkout - checkin) / (1000 * 60 * 60 * 24));
-            const extraFee = (guests > 1) ? (guests - 1) * 20 : 0;
-            const total = (currentNightlyRate + extraFee) * diffDays;
-            document.getElementById('summary-nights').innerText = diffDays + " nights";
-            document.getElementById('summary-total').innerText = `$${total}`;
-            summaryBox.style.display = 'block';
+            const nights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
+            document.getElementById('summary-nights').innerText = nights;
+            document.getElementById('summary-total').innerText = `$${nights * currentNightlyRate}`;
+            document.getElementById('price-summary').style.display = 'block';
         }
     }
 
     function sendWhatsApp(type) {
         const name = document.getElementById('modal-title').innerText;
         const total = document.getElementById('summary-total').innerText;
-        const checkin = document.getElementById('modal-checkin').value;
-        let msg = `*Islandwide Stays Inquiry*\n\nProperty: ${name}\nCheck-in: ${checkin}\nTotal: ${total}\n\n${type === 'Payment' ? 'I have sent the payment receipt.' : 'Is this available?'}`;
-        window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`);
-    }
-
-    function copyAccountNumber() {
-        navigator.clipboard.writeText(document.getElementById('acc-num').innerText);
-        alert("Copied to clipboard!");
+        window.open(`https://wa.me/${MY_PHONE}?text=Inquiry for ${name}. Total: ${total}`);
     }
 
     function searchProperties() {
         const filter = document.getElementById('location-input').value.toLowerCase();
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => card.classList.toggle('hidden', !card.innerText.toLowerCase().includes(filter)));
+        document.querySelectorAll('.card').forEach(card => card.classList.toggle('hidden', !card.innerText.toLowerCase().includes(filter)));
     }
   </script>
 </body>
