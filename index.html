@@ -27,7 +27,7 @@
     .title { font-size: 32px; font-weight: 600; text-shadow: 0 2px 10px rgba(0,0,0,0.3); letter-spacing: -0.5px; }
     .subtitle { font-size: 16px; opacity: 0.9; font-weight: 300; }
 
-    /* BLUE SEARCH CARD */
+    /* SEARCH CARD */
     .search-card { 
       background: var(--primary); 
       width: 90%; max-width: 500px; margin: -80px auto 30px; border-radius: 24px; padding: 20px; 
@@ -78,19 +78,19 @@
   <div class="search-card">
     <div class="field">
       <label>Location</label>
-      <input type="text" id="location-input" onkeyup="searchProperties()" placeholder="Where to? (e.g. Montego Bay)">
+      <input type="text" id="location-input" onkeyup="searchProperties()" placeholder="Where to? (e.g. Kingston)">
     </div>
     <button class="search-btn" onclick="searchProperties()">Check Availability</button>
   </div>
 
   <div class="container" id="property-list">
-    <div class="section-title">Islandwide Featured Stays 🏠</div>
+    <div class="section-title">Featured Listings 🏠</div>
 
     <div class="card">
         <img src="images/genesis1.jpg" class="card-img">
         <div class="card-content">
             <h3 style="margin:0;">Genesis 28 Waterloo Ave</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Sophisticated Urban Bliss, KGN 10</p>
+            <p style="color:#64748b; margin:5px 0;">📍 KGN 10</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$150 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
                 <button class="book-btn" onclick="openGallery('Genesis 28', 'images/genesis', 31, '$150', 'Waterloo Ave, KGN 10')">Details</button>
@@ -99,10 +99,10 @@
     </div>
 
     <div class="card">
-        <img src="images/sky1.jpeg" class="card-img">
+        <img src="images/sky1.jpg" class="card-img">
         <div class="card-content">
             <h3 style="margin:0;">Sky View Retreat</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 High-Altitude Luxury, KGN</p>
+            <p style="color:#64748b; margin:5px 0;">📍 Red Hills, Kingston</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$165 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
                 <button class="book-btn" onclick="openGallery('Sky View Retreat', 'images/sky', 21, '$165', 'Red Hills, Kingston')">Details</button>
@@ -126,46 +126,46 @@
         <img src="images/apt1.jpg" class="card-img">
         <div class="card-content">
             <h3 style="margin:0;">Modern Apartment MoBay</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Spacious Living, St. James</p>
+            <p style="color:#64748b; margin:5px 0;">📍 Montego Bay, St. James</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$180 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
-                <button class="book-btn" onclick="openGallery('Modern Apartment', 'images/apt', 15, '$180', 'Montego Bay, St. James')">Details</button>
+                <button class="book-btn" onclick="openGallery('Modern Apartment', 'images/apt', 15, '$180', 'Montego Bay')">Details</button>
             </div>
         </div>
     </div>
 
     <div class="card">
-        <img src="images/modern1.jpeg" class="card-img">
+        <img src="images/modern1.jpg" class="card-img">
         <div class="card-content">
             <h3 style="margin:0;">Modern Studio MoBay</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Sleek Minimalist, St. James</p>
+            <p style="color:#64748b; margin:5px 0;">📍 Montego Bay, St. James</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$120 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
-                <button class="book-btn" onclick="openGallery('Modern Studio', 'images/modern', 14, '$120', 'Montego Bay, St. James')">Details</button>
+                <button class="book-btn" onclick="openGallery('Modern Studio', 'images/modern', 14, '$120', 'Montego Bay')">Details</button>
             </div>
         </div>
     </div>
 
     <div class="card">
-        <img src="images/mahogany1.jpeg" class="card-img">
+        <img src="images/mahogany1.jpg" class="card-img">
         <div class="card-content">
             <h3 style="margin:0;">Mahogany at Carib</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Oceanfront Living, Ocho Rios</p>
+            <p style="color:#64748b; margin:5px 0;">📍 Ocho Rios, St. Ann</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$140 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
-                <button class="book-btn" onclick="openGallery('Mahogany at Carib', 'images/mahogany', 13, '$140', 'Ocho Rios, St. Ann')">Details</button>
+                <button class="book-btn" onclick="openGallery('Mahogany at Carib', 'images/mahogany', 13, '$140', 'Ocho Rios')">Details</button>
             </div>
         </div>
     </div>
 
     <div class="card">
-        <img src="images/mystic1.jpeg" class="card-img">
+        <img src="images/mystic1.jpg" class="card-img">
         <div class="card-content">
             <h3 style="margin:0;">Mystic Ridge Studio</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Resort Style, Ocho Rios</p>
+            <p style="color:#64748b; margin:5px 0;">📍 Ocho Rios, St. Ann</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$110 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
-                <button class="book-btn" onclick="openGallery('Mystic Ridge', 'images/mystic', 13, '$110', 'Ocho Rios, St. Ann')">Details</button>
+                <button class="book-btn" onclick="openGallery('Mystic Ridge Studio', 'images/mystic', 13, '$110', 'Ocho Rios')">Details</button>
             </div>
         </div>
     </div>
@@ -174,7 +174,7 @@
         <img src="images/tiny1.jpg" class="card-img">
         <div class="card-content">
             <h3 style="margin:0;">Tiny Living @ Kingston</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Cozy & Well-equipped</p>
+            <p style="color:#64748b; margin:5px 0;">📍 Central Kingston</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$65 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
                 <button class="book-btn" onclick="openGallery('Tiny Living', 'images/tiny', 12, '$65', 'Central Kingston')">Details</button>
@@ -183,13 +183,13 @@
     </div>
 
     <div class="card">
-        <img src="images/summit1.jpeg" class="card-img">
+        <img src="images/summit1.jpg" class="card-img">
         <div class="card-content">
             <h3 style="margin:0;">Summit 165</h3>
-            <p style="color:#64748b; margin:5px 0;">📍 Coastal Views, MoBay</p>
+            <p style="color:#64748b; margin:5px 0;">📍 Montego Bay, St. James</p>
             <div class="price-row">
                 <div style="font-weight: 600; font-size:18px;">$210 <span style="font-size:12px; font-weight:400; color:#64748b;">/ night</span></div>
-                <button class="book-btn" onclick="openGallery('Summit 165', 'images/summit', 11, '$210', 'Montego Bay, St. James')">Details</button>
+                <button class="book-btn" onclick="openGallery('Summit 165', 'images/summit', 11, '$210', 'Montego Bay')">Details</button>
             </div>
         </div>
     </div>
@@ -229,8 +229,7 @@
 
         <div id="bank-section" style="display: none;">
           <h3 style="font-size:18px; margin-bottom: 5px;">Secure Payment</h3>
-          <p style="font-size:13px; color:#64748b; margin-bottom: 20px;">Pay via Credit/Debit Card or Bank Transfer.</p>
-          
+          <p style="font-size:13px; color:#64748b; margin-bottom: 20px;">NCB Bank Details</p>
           <div style="background: #f1f5f9; padding: 20px; border-radius: 16px; margin-bottom: 15px;">
             <p style="font-size: 11px; color: #94a3b8; margin: 0; font-weight: 600;">NCB SAVINGS ACCOUNT</p>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 5px;">
@@ -239,8 +238,6 @@
             </div>
             <p style="font-size: 12px; margin: 10px 0 0 0; color: #1e293b;">Account Name: <b>Islandwide Stays Ltd.</b></p>
           </div>
-
-          <button class="search-btn" onclick="requestCardPayment()" style="margin-bottom: 10px;">Pay with Card 💳</button>
           <button class="wa-btn" onclick="sendWhatsApp('Payment')" style="background: #0a1f44;">I've Sent the Transfer 💸</button>
           <button class="book-btn" onclick="showBookingOptions()" style="border:none; margin-top:10px; width:100%;">← Back</button>
         </div>
@@ -252,16 +249,15 @@
     let currentNightlyRate = 0;
     const MY_PHONE = "18764313312"; 
 
-    function openGallery(name, pathPrefix, count, price, loc) {
+    function openGallery(name, prefix, count, price, loc) {
         document.getElementById('modal-title').innerText = name;
         document.getElementById('modal-location').innerText = "📍 " + loc;
-        
         const slider = document.getElementById('modal-slider');
         slider.innerHTML = ''; 
         
         for (let i = 1; i <= count; i++) {
             const img = document.createElement('img');
-            img.src = `${pathPrefix}${i}.jpg`; 
+            img.src = `${prefix}${i}.jpg`; 
             img.className = 'modal-hero-img';
             img.onerror = function() { this.style.display='none'; };
             slider.appendChild(img);
@@ -325,20 +321,6 @@
         const filter = document.getElementById('location-input').value.toLowerCase();
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => card.classList.toggle('hidden', !card.innerText.toLowerCase().includes(filter)));
-    }
-
-    function requestCardPayment() {
-        const propName = document.getElementById('modal-title').innerText;
-        const total = document.getElementById('summary-total').innerText;
-        
-        if(total === "$0") {
-            alert("Please select your dates first so we can calculate the total.");
-            showBookingOptions();
-            return;
-        }
-        alert("To keep your transaction secure, we will send a customized PayPal/Card link to your WhatsApp now.");
-        const msg = `Hi Islandwide! I'd like to pay for my stay at ${propName} (${total}) via Credit Card. Please send the secure payment link.`;
-        window.open(`https://wa.me/${MY_PHONE}?text=${encodeURIComponent(msg)}`);
     }
   </script>
 </body>
